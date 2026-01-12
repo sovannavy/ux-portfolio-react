@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Button, Typography, Container, Card, CardContent } from '@mui/material';
 
 function App() {
+  const handleClick = () => {
+    alert("Trip added! (React version)");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{ marginTop: '50px' }}>
+      <Typography variant="h3" gutterBottom>My Travel App</Typography>
+
+      <Card style={{ marginBottom: '20px', padding: '20px' }}>
+        <CardContent>
+          <Typography variant="h5">Upcoming Trips</Typography>
+          <Button variant="contained" color="primary" onClick={handleClick}>
+            Add Trip
+          </Button>
+        </CardContent>
+      </Card>
+    </Container>
   );
 }
 
